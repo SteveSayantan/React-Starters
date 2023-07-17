@@ -1,0 +1,161 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,ul,li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'],li {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root{
+    --grayish-blue: hsl(237, 18%, 59%);
+    --soft-red: hsl(345, 95%, 68%);
+    --white:hsl(0, 0%, 100%);
+    --dark-desaturated-blue: hsl(236, 21%, 26%);
+    --very-dark-blue: hsl(235, 16%, 14%);
+    --blackish-blue: hsl(234, 17%, 12%);
+    --text-medium: 1.5rem;
+    --text-big: clamp(2rem, 6vw + 1rem, 6rem);
+}
+
+.text--white{
+    color: var(--white);
+}
+.text--grey{
+    color: var(--grayish-blue);
+}
+.text--soft-red{
+  color: var(--soft-red);
+}
+.text--uppercase{
+    text-transform: uppercase;
+}
+.text--small{
+ font-size: var(--text-small,0.625rem);
+}
+.text--medium{
+ font-size: var(--text-medium);
+}
+.text--big{
+ font-size: var(--text-big);
+}
+body{
+  display: grid;
+  align-items: center;
+    position: relative;
+    font-family: 'Red Hat Text', sans-serif;
+    /* background-image: url('images/bg-stars.svg'),linear-gradient(var(--blackish-blue) 85%,var(--dark-desaturated-blue)); */
+    background-repeat: repeat;
+  
+}
+.title--text{
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.timer{
+  display: flex;
+  
+}
+.timer>*{
+  flex-basis: 100%;
+}
+
+.timer--display{
+  position: relative;
+  display: flex;
+  width: min(20vw,164px);
+  border-radius: 10px;
+  aspect-ratio: 1;
+  background-color: var(--dark-desaturated-blue);
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  
+}
+.timer--text{
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: 1.5em;
+}
+
+
+
+@media only screen  and (min-width:600px){
+.timer{
+  max-width: 780px;
+  margin: 0 auto;
+}
+}
+@media only screen  and (min-width:1000px){
+.text--small{
+  --text-small:0.80rem;
+}
+}
