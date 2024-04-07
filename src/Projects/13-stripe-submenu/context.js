@@ -9,6 +9,8 @@ const AppProvider=({children})=>{
     const[location,setLocation]=useState({})
     const [page,setPage]=useState({page:'',links:[]})
 
+    // the following functions should be wrapped with useCallback
+    
     const openSidebar=()=>setIsSidebarOpen(true)
     const closeSidebar=()=>setIsSidebarOpen(false)
 

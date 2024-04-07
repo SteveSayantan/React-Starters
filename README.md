@@ -57,6 +57,18 @@ This project uses the Strapi CMS to create a set of submenus. The project uses t
 
 This project allows users to add items to a cart and checkout. The project uses the useState hook to store the cart in memory. Users can add an item to the cart by entering the item name and quantity in the input fields and clicking the "Add Item" button. Users can checkout by clicking the "Checkout" button.
 
+## Cocktails
+
+Clubhouse Cocktail" is a vibrant and engaging website designed to bring cocktail enthusiasts together in a virtual space. Featuring a curated collection of cocktail recipes, mixology tips, and interactive forums, this platform encourages users to explore and share their love for mixology. 
+
+Take a look at [it](https://clubhouse-cocktail.netlify.app)
+
+## Markdown Preview
+
+"Markdown Preview Online" is a convenient and user-friendly web application that allows users to create, edit, and preview Markdown documents in real-time. With a clean and intuitive interface, this tool makes it easy for writers, bloggers, and developers to format text, add images, create lists, and more using Markdown syntax. 
+
+Take a look at [it](https://markdown-preview-online.netlify.app)
+
 ### To run the projects
 You can run the projects by cloning the repo and then running the following commands in the project directory:
 ```javascript

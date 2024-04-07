@@ -121,6 +121,45 @@ p {
 }
 /*  global classes */
 
+.text-center{
+  text-align: center;
+}
+
+.text-justify{
+  text-align: justify;
+}
+.pad-3{
+  padding: 1.8em;
+}
+.pad-y-5{
+  padding-block: 5em;
+}
+
+.max-width{
+  max-width:70rem ;
+}
+
+.margin-x-auto{
+  margin-inline:auto;
+}
+
+.margin-bottom-2{
+  margin-bottom: 1em;
+}
+
+.margin-bottom-4{
+  margin-bottom: 2.5em;
+}
+.visually-hidden {      /* This is for styling the hidden input field for uploading (copied from MDN Docs) */
+  position: absolute;
+  top:0;
+  left:50%;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);  /* it determines what part of an element should be shown, by creating a region*/
+
+}
 /* section */
 .section {
   width: 90vw;
@@ -140,7 +179,7 @@ Markdown
 ===============
 */
 .markdown {
-  padding: 4rem;
+  padding: 2.35rem;
   display: grid;
   row-gap: 4rem;
 }
@@ -158,11 +197,18 @@ Markdown
 }
 
 @media screen and (min-width: 992px) {
-  .markdown {
+  .markdown{
     min-height: 100vh;
+    padding:4em;
     grid-template-columns: 1fr 1fr;
     column-gap: 4rem;
   }
+
+  .markdown{
+    grid-column-end: 1;
+  }
+
+
 }
 /* unique styles */
 img {
@@ -190,3 +236,65 @@ pre {
   color: yellow;
   margin-bottom: 1.5rem;
 }
+
+.nav-btn{
+  padding: 0.5em 2em;
+  color: black;
+  border-radius: 3.5px;
+  background-color: var(--clr-grey-9);
+}
+.active-btn{
+  background-color:#0b5ed7 ;
+  color: white;
+}
+
+.drop-file{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  width: 80%;
+  max-width: 35rem;
+  margin-inline: auto;
+  box-shadow: var(--dark-shadow);
+  min-height: 13rem;
+
+}
+
+@media screen and (min-width: 768px) {
+  .drop-file{
+    min-height: 15rem;
+  }
+
+}
+input[type='file']+p{
+  margin:0;
+}
+.upload-form{
+  position: relative;
+}
+
+.upload-btn{
+  display: inline-block;
+  padding: 0.5em 1.25em;
+  border-radius: 3.5px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 0.25em;
+  background-color: #0d6efd;
+}
+.upload-btn:active,.upload-btn:hover{
+  background-color: #0b5ed7;
+}
+
+.reset-btn{
+  padding: 0.5em 1.25em;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 3.5px;
+  border:none;
+  cursor: pointer;
+  color: white;
+  background-color: #dc3545;
+}
+

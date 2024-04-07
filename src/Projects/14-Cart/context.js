@@ -1,4 +1,4 @@
-import React, { useState, useContext, useReducer, useEffect } from 'react'
+import React, { useContext, useReducer, useEffect } from 'react'
 import cartItems from './data'
 import reducer from './reducer'
 
@@ -13,6 +13,8 @@ const initialState={
 }
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer,initialState)
+
+  // wrap the following five functions with useCallback
   const clearCart=()=>{
     dispatch({type:'CLEAR_CART'})
   }
@@ -38,7 +40,8 @@ const AppProvider = ({ children }) => {
   
   useEffect(()=>{ //This is for calculating total amount and total items whenever cart value changes
     dispatch({type:'GET_TOTAL'})
-  },[state.cart])
+
+  },[state.cart])   // The new state returned by GET_TOTAL contains a pointer to the same array, hence it passes the comparison test thereby avoiding infinite re-renders
 
   return (
     <AppContext.Provider

@@ -85,7 +85,7 @@ function App() {
               <FaLock/>
             </button>
           </div>
-          <button className="btn" type='button' onClick={getPerson} >        {/* When value of disabled prop is true, the button is disabled */}
+          <button className="btn" type='button' onClick={getPerson} disabled={loading}>        {/* When value of disabled prop is true, the button is disabled */}
             {loading?'loading...':'random user'}
           </button>
           

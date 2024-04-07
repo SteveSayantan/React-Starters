@@ -7,6 +7,8 @@ const AppProvider= ({children})=>{      // creating a component (for reusability
    const[isSidebarOpen,setIsSideBarOpen]=useState(false)
    const[isModalOpen,setIsModalOpen]=useState(false)
 
+   // the following four functions must be wrapped with useCallback
+
    const openSidebar=()=>setIsSideBarOpen(true)
    const closeSidebar=()=>setIsSideBarOpen(false)
 

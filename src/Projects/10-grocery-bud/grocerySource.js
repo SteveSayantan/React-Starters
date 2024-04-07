@@ -51,6 +51,8 @@ const GroceryBud=()=>{
 
     const clearList=()=>{
         setList([])
+        setName('');
+        setIsEditing(false);
         showAlert(true,'danger','Empty List')
 
     }
@@ -59,6 +61,8 @@ const GroceryBud=()=>{
         showAlert(true,'danger','Item Deleted')
         const newList= list.filter((item)=>id!=item.id)
         setList(newList);
+        setName('');
+        setIsEditing(false);
     }
 
     const editItem=(id)=>{

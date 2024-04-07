@@ -1,47 +1,63 @@
-import React, { useEffect, useState } from 'react'
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
-import Review from './review';
-import data from './data';
-import people from './data';
+import { useEffect, useState } from 'react';
+import list from './data';
+import { FaQuoteRight } from 'react-icons/fa';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
-function Slider(){
-    const[index,setIndex]=useState(2);
+const Carousel = () => {
+  const [people, setPeople] = useState(list);
+  const [currentPerson, setCurrentPerson] = useState(0);
 
-    useEffect(function(){
-       if(index<0)setIndex(data.length-1);
-       if(index==data.length) setIndex(0); 
-    },[index])
+  const prevSlide = () => {
+    setCurrentPerson((oldPerson) => {
+      const result = (oldPerson - 1 + people.length) % people.length;
+      return result;
+    });
+  };
+  const nextSlide = () => {
+    setCurrentPerson((oldPerson) => {
+      const result = (oldPerson + 1) % people.length;
+      return result;
+    });
+  };
 
+  useEffect(() => {
+    let sliderId = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => {  //This cleanUp function is crucial. Without it, for each change in the currentPerson there would be a setInterval function added, which will break the functionality.
+      clearInterval(sliderId);
+    };
+  }, [currentPerson]);
 
-    useEffect(()=>{
-     let clearSlider=setInterval(setIndex,3000,(index-1)); 
-
-        return ()=>clearInterval(clearSlider); //This cleanUp function is crucial. Without it, for each change in the index there would be a setInterval function added, which will break the functionality.
-    },[index])
-
-    return <section className="section">
-        <div className="title">
-           <h2>
-            <span>/</span>reviews   
-            </h2> 
-        </div>
-        <div className="section-center">
-          {
-              data.map((people,peopleIndex)=>{
-                
-                let position='nextSlide';
-
-                if(peopleIndex==index) position='activeSlide';
-                
-                if(peopleIndex==index-1||(index==0 && peopleIndex== data.length-1 )) position='lastSlide';
-
-                return <Review key={people.id} position={position} {...people}/>
-              })
-          }
-          <button className="prev" onClick={()=>setIndex(index-1)}><FiChevronLeft/></button> 
-          <button className="next" onClick={()=>setIndex(index+1)}><FiChevronRight/></button> 
-        </div>
+  return (
+    <section className='slider-container'>
+      {people.map((person, personIndex) => {
+        const { id, image, name, title, quote } = person;
+        return (
+          <article
+            className='slide'
+            style={{
+              transform: `translateX(${100 * (personIndex - currentPerson)}%)`,
+              opacity: personIndex === currentPerson ? 1 : 0,
+              visibility: personIndex === currentPerson ? 'visible' : 'hidden',
+            }}
+            key={id}
+          >
+            <img src={image} alt={name} className='person-img' />
+            <h5 className='name'>{name}</h5>
+            <p className='title'>{title}</p>
+            <p className='text'>{quote}</p>
+            <FaQuoteRight className='icon' />
+          </article>
+        );
+      })}
+      <button type='button' className='prev' onClick={prevSlide}>
+        <FiChevronLeft />
+      </button>
+      <button type='button' className='next' onClick={nextSlide}>
+        <FiChevronRight />
+      </button>
     </section>
-}
-
-export default Slider;
+  );
+};
+export default Carousel;

@@ -6,9 +6,9 @@ import { AppProvider } from "./context";
 
 function SidebarSource(){
     return <AppProvider>  
-        <Home/>
-        <Modal/>
-        <Sidebar/> 
+            <Home/>
+            <Modal/>
+            <Sidebar/> 
         </AppProvider>
     
 }
