@@ -67,7 +67,7 @@ Take a look at [it](https://clubhouse-cocktail.netlify.app)
 
 "Markdown Preview Online" is a convenient and user-friendly web application that allows users to create, edit, and preview Markdown documents in real-time. With a clean and intuitive interface, this tool makes it easy for writers, bloggers, and developers to format text, add images, create lists, and more using Markdown syntax. 
 
-Take a look at [it](https://markdown-preview-online.netlify.app)
+Take a look at [it](https://online-markdown-preview.netlify.app)
 
 ### To run the projects
 You can run the projects by cloning the repo and then running the following commands in the project directory:

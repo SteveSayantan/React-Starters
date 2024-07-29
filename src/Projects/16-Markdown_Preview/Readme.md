@@ -1,7 +1,7 @@
 ## Markdown Previewer with Drag & Drop
 This React application lets you preview your markdown files with ease. Simply drag and drop your markdown files onto the application window to see the rendered HTML instantly.
 
-Click [here](online-markdown-preview.netlify.app) to take a quick look.
+Click [here](https://online-markdown-preview.netlify.app) to take a quick look.
 
 ### Features
 **Drag & Drop Support:** Effortlessly preview markdown files by dragging them onto the application window.
