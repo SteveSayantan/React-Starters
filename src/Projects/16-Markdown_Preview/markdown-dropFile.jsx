@@ -13,7 +13,7 @@ const MarkDownDropFile=()=>{
         })
 
         if(!file){
-            console.error("Only markdown file is allowed");
+            window.alert("Only markdown file is allowed");
             return;
         }
         
@@ -34,7 +34,7 @@ const MarkDownDropFile=()=>{
         let file= e.target.files[0];
 
         if(!file.name.endsWith('.md')){
-            console.error("Only markdown file is allowed");
+            window.alert("Only markdown file is allowed");
             return;
         }
 
@@ -50,8 +50,8 @@ const MarkDownDropFile=()=>{
         return <main className="pad-3">
                 <section className="drop-file" onDrop={DropHandler} onDragOver={DragOverHandler}>
                     <form action="#" className="upload-form text-center">
-                            <label htmlFor="uploads" className="upload-btn" >Upload Files</label>
-                            <input type="file" className='visually-hidden' id="uploads" accept=".md" onChange={uploadHandler}/>     
+                            <label htmlFor="uploads" className="upload-btn" >Upload File</label>
+                            <input type="file" className='visually-hidden' id="uploads" name='upload' accept=".md" onChange={uploadHandler}/>     
                             <p>or,drag a markdown file here</p>
                     </form>
                 </section>

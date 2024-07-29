@@ -30,7 +30,7 @@ const AppContext = React.createContext()
 
 
   useEffect(()=>{ 
-    fetchDrinks();      // Inspite of ESLint warning, Do not add fetchDrinks in dependency array without wrapping it in useCallback hook. Checkout the projects video @ 8:51 and https://youtu.be/VgqWYfnr8Uo for  details
+    fetchDrinks();  
   },[searchTerm,fetchDrinks])
 
 
